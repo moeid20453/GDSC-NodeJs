@@ -1,0 +1,23 @@
+{
+  "name": "gdsc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moeid20453/GDSC-NodeJs.git"
+  },
+  "author": "Eido",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moeid20453/GDSC-NodeJs/issues"
+  },
+  "homepage": "https://github.com/moeid20453/GDSC-NodeJs#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.6.1"
+  }
+}
