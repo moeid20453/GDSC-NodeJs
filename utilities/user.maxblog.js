@@ -1,4 +1,4 @@
-let User = require("../model/user.model");
+let User = require("../modules/user/user.model")
 
 exports.maxBlogs = async(req,res,next)=>{
   id = req.session.user._id

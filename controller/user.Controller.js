@@ -1,4 +1,4 @@
-let User = require("../model/user.model");
+let User = require("../modules/user/user.model")
 let bcrypt = require("bcrypt");
 let {  generateToken } = require("../utilities/token.util")
 let { sendMail } = require("../utilities/emailer.util");
@@ -10,7 +10,7 @@ let getAllUsers = async (req, res) => {
     let numOfItems = 5 ;
     let skippedItems = (page - 1) * numOfItems ;
     let allUsers = await User.find({}).limit(numOfItems).skip(skippedItems)
-    res.status(200).json({message: "success", allUsers})
+    res.status(200).json({message: "success", allUsers , code: 200})
    
 }
 let getDataID = async (req, res) =>{
@@ -22,7 +22,7 @@ let getDataID = async (req, res) =>{
 let getUserBlogs =  async (req, res) =>{
     let userid = req.params.id;
     let user = await User.findById({_id: userid}).select("userBlogs").populate("userBlogs")
-    res.status(200).json({message: "success", user})
+    res.status(200).json({message: "success", user , code: 200})
 }
 let updateUser = async (req, res) =>{
     let userid = req.params.id;
@@ -49,7 +49,7 @@ let activateUser = async (req,res) =>{
       res.status(400).json({message : "Incorrect Token"});
     }else{
       await User.findByIdAndUpdate(decoded, {isActive: true})
-      res.status(200).json({message: "successfully Activated your Account"})
+      res.status(200).json({message: "successfully Activated your Account", code: 200})
     }
   });
 }
@@ -66,7 +66,7 @@ let Login = async (req, res) =>{
         req.session.user = user;
         await req.session.save();
         const token = await  generateToken({user})
-        res.status(200).json({message: "success", token })
+        res.status(200).json({message: "success", token, code: 200 })
     }else{
         res.status(400).json({message: "Incorrect password"})
     }

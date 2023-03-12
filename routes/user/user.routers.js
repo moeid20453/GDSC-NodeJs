@@ -1,11 +1,11 @@
 const app = require("express").Router();
-let userController = require("../controller/user.Controller")
-let {addUserValidation,updateUserValidation} = require('../validation/user.validation')
-let validator = require('../helpers/common.validate')
-let { checkSession } = require('../utilities/checkAuth.util')
-let { verifyToken } = require("../utilities/token.util")
-let endPoints = require("../helpers/endPoints")
-let checkRole = require("../utilities/checkRole")
+let userController = require("../../controller/user.Controller")
+let {addUserValidation,updateUserValidation} = require('../../validation/user.validation')
+let validator = require('../../helpers/common.validate')
+let { checkSession } = require('../../utilities/checkAuth.util')
+let { verifyToken } = require("../../utilities/token.util")
+let endPoints = require("../../helpers/endPoints")
+let checkRole = require("../../utilities/checkRole")
 
 app.post("/Register",validator(addUserValidation), userController.Register);
 app.get("/activateUser/:token", userController.activateUser);

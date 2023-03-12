@@ -1,5 +1,5 @@
-let Blog = require("../model/blog.model")
-let User = require("../model/user.model")
+let Blog = require("../modules/blog/blog.model")
+let User = require("../modules/user/user.model")
 
 
 
