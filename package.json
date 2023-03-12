@@ -1,23 +1,30 @@
 {
-  "name": "gdsc",
+  "name": "week-3",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/moeid20453/GDSC-NodeJs.git"
-  },
-  "author": "Eido",
+  "author": "eid",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/moeid20453/GDSC-NodeJs/issues"
-  },
-  "homepage": "https://github.com/moeid20453/GDSC-NodeJs#readme",
   "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.1",
+    "connect-mongodb-session": "^3.1.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "easy-rbac": "^3.2.0",
+    "ejs": "^3.1.8",
     "express": "^4.18.2",
-    "socket.io": "^4.6.1"
+    "express-session": "^1.17.3",
+    "joi": "^17.7.0",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.8.4",
+    "mysql2": "^3.0.1",
+    "nodemailer": "^6.9.1",
+    "sequelize": "^6.28.0"
   }
 }

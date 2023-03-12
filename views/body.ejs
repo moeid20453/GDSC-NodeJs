@@ -1,0 +1,45 @@
+<%- include("header.ejs") %> <%- include("modals.ejs") %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 m-3">
+      <h1>All Blogs</h1>
+      <button
+        type="button"
+        class="btn btn-success"
+        data-toggle="modal"
+        data-target="#addBlogModal">
+        ADD NEW BLOG
+      </button>
+    </div>
+    <% for(let index = 0; index < allBlogs.length; index++) {%>
+
+    <div class="card col-md-3 ml-3 mb-3" style="width: 18rem">
+      <div class="card-body">
+        <h5 class="card-title" id="title<%= allBlogs[index].id %>">
+          <%= allBlogs[index].title %>
+        </h5>
+        <p class="card-body" id="content<%= allBlogs[index].id %>">
+          <%= allBlogs[index].content %>
+        </p>
+        <a
+          onclick="getBlogId('<%= allBlogs[index].id %>')"
+          data-toggle="modal"
+          data-target="#EditBlogModal"
+          class="card-link btn btn-info"
+          >Edit</a
+        >
+        <a
+          class="card-link btn btn-danger"
+          onclick="getBlogIdToDelete('<%= allBlogs[index].id %>')"
+          data-toggle="modal"
+          data-target="#DeleteBlogModal"
+          >Delete</a
+        >
+      </div>
+    </div>
+    <% } %>
+  </div>
+</div>
+
+<%- include("footer.ejs") %>
